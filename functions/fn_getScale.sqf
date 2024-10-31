@@ -20,6 +20,7 @@ private _obj = _this;
 private _scale = _obj getVariable ["xCamScaleVal", objNull];                                    // XCam
 if (_scale isEqualTo objNull) then { _scale = _obj getVariable ["Sp_var_scale", objNull]; };    // Surface Painter
 if (_scale isEqualTo objNull) then { _scale = _obj getVariable ["MB_ObjVar_Scale", objNull]; }; // Map Builder
+if (_scale isEqualTo objNull) then { _scale = _obj get3DENAttribute "ENH_objectScaling" select 0; }; // Eden Enhanced
 if (_scale isEqualTo objNull) then { _scale = 1; };
 if ((typeName _scale) == "STRING") then { _scale = parseNumber(_scale); };
 
