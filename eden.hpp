@@ -34,10 +34,10 @@ class display3DEN
 
                 class E2TBMissionTerrainBuilderEnhAbsolute
                 {
-					text   = "STR_SCAR_E2TB_3DEN_MenuBarEnhAbsolute";
-					data   = "E2TBMissionTerrainBuilder";
-					action = "[true,true] spawn SCAR_E2TB_fnc_exportFrom3DEN;";
-				};
+                    text   = "STR_SCAR_E2TB_3DEN_MenuBarEnhAbsolute";
+                    data   = "E2TBMissionTerrainBuilder";
+                    action = "[true,true] spawn SCAR_E2TB_fnc_exportFrom3DEN;";
+                };
             };
         };
     };
