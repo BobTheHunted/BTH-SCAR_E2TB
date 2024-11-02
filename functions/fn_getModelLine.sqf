@@ -7,12 +7,13 @@
     Parameter(s);
     0: OBJECT
     1: BOOLEAN - true for absolute positioning, false for relative.
+    2: BOOLEAN - true to use eden enhanced scale attribute, false to not.
 
     Return:
     STRING
 
     Example:
-    [_object, false] call SCAR_E2TB_fnc_getModelLine
+    [_object, false, false] call SCAR_E2TB_fnc_getModelLine
 
     Thank you:
     @ianbanks @Ice @cring0 @Adanteh @HorribleGoat @T_D
@@ -24,7 +25,7 @@
     LICENSE IS MIT. keep this header if you use it elsewhere.
 */
 
-params ["_obj", "_isAbsolute"];
+params ["_obj", "_isAbsolute", "_edenEnh"];
 
 #define DECIMALS 8
 
@@ -44,7 +45,12 @@ if (
 ) then {
 
     // get scale
-    private _scale = _obj call SCAR_E2TB_fnc_getScale;
+    private _scale = 1.000000;
+    if (_edenEnh) then {
+        _scale = [_obj,true] call SCAR_E2TB_fnc_getScale;
+    } else {
+        _scale = [_obj,false] call SCAR_E2TB_fnc_getScale;
+    };
     // get angles
     ([_obj, _modelName] call SCAR_E2TB_fnc_getAngles) params ["_rotX", "_rotY", "_rotZ"];
     // get position
