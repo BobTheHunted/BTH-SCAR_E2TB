@@ -8,20 +8,36 @@ class display3DEN
             class Items
             {
                 class MissionExport {
-                    items[] += {"E2TBMissionTerrainBuilder", "E2TBMissionTerrainBuilderAbsolute"};
+                    items[] += {"E2TBMissionTerrainBuilder", "E2TBMissionTerrainBuilderAbsolute", "E2TBMissionTerrainBuilderEnh", "E2TBMissionTerrainBuilderEnhAbsolute"};
                 };
 
-                class E2TBMissionTerrainBuilder {
+                class E2TBMissionTerrainBuilder
+                {
                     text   = "$STR_SCAR_E2TB_3DEN_MenuBar";
                     data   = "E2TBMissionTerrainBuilder";
-                    action = "[false] spawn SCAR_E2TB_fnc_exportFrom3DEN;";
+                    action = "[false,false] spawn SCAR_E2TB_fnc_exportFrom3DEN;";
                 };
-
-                class E2TBMissionTerrainBuilderAbsolute {
+                
+                class E2TBMissionTerrainBuilderAbsolute
+                {
                     text   = "$STR_SCAR_E2TB_3DEN_MenuBarAbsolute";
                     data   = "E2TBMissionTerrainBuilder";
-                    action = "[true] spawn SCAR_E2TB_fnc_exportFrom3DEN;";
+                    action = "[true,false] spawn SCAR_E2TB_fnc_exportFrom3DEN;";
                 };
+                
+                class E2TBMissionTerrainBuilderEnh
+                {
+                    text   = "STR_SCAR_E2TB_3DEN_MenuBarEnh";
+                    data   = "E2TBMissionTerrainBuilder";
+                    action = "[false,true] spawn SCAR_E2TB_fnc_exportFrom3DEN;";
+                };
+
+                class E2TBMissionTerrainBuilderEnhAbsolute
+                {
+					text   = "STR_SCAR_E2TB_3DEN_MenuBarEnhAbsolute";
+					data   = "E2TBMissionTerrainBuilder";
+					action = "[true,true] spawn SCAR_E2TB_fnc_exportFrom3DEN;";
+				};
             };
         };
     };
