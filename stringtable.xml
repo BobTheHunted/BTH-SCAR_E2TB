@@ -17,6 +17,10 @@
             <English>Export to Terrain Builder (E2TB, Eden Enhanced)</English>
             <Italian>Esporta a Terrain Builder (E2TB, Eden Enhanced)</Italian>
         </Key>
+        <Key ID="STR_SCAR_E2TB_3DEN_MenuBarEnhAbsolute">
+            <English>Export to Terrain Builder (E2TB, Eden Enhanced)</English>
+            <Italian>Esporta a Terrain Builder (E2TB, Eden Enhanced, posizione assoluta)</Italian>
+        </Key>
         <Key ID="STR_SCAR_E2TB_CopyToClipboard">
             <English>Copy the map objects to the clipboard</English>
             <Italian>Copia gli oggetti in mappa negli appunti</Italian>
