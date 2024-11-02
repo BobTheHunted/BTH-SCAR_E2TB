@@ -24,6 +24,7 @@ private _entities = all3DENEntities select 0;
 	private _scale = _x get3DENAttribute "ENH_objectScaling" select 0;
 	_x setVariable ["BTH_ENH_objectScaling", _scale, true];
     _x set3DENAttribute ["ENH_objectScaling", 1.000000];
+	_x setObjectScale 1.0; // Force scale change to rendered object just in case
 } forEach _entities;
 
 // copy to clip
@@ -31,8 +32,9 @@ private _entities = all3DENEntities select 0;
 
 // re-apply eden scale
 {
-	_scale = _x getVariable "BTH_ENH_objectScaling";
+	private _scale = _x getVariable "BTH_ENH_objectScaling";
     _x set3DENAttribute ["ENH_objectScaling", _scale];
+	_x setObjectScale _scale;  // Force scale change
 } forEach _entities;
 
 // message
