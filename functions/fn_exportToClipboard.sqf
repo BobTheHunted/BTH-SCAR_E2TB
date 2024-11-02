@@ -7,15 +7,16 @@
     Parameter(s);
     0: ARRAY of ENTITIES
     1: BOOLEAN - true for absolute positioning, false for relative.
+    2: BOOLEAN - true to use eden enhanced scaling attribute, false to not.
 
     Return:
     true
 
     Example:
-    [_entities, false] call SCAR_E2TB_fnc_exportToClipboard
+    [_entities, false, false] call SCAR_E2TB_fnc_exportToClipboard
 */
 
-params ["_entities", "_isAbsolute"];
+params ["_entities", "_isAbsolute", "_edenEnh"];
 
 // init defaults
 if (isNil "SCAR_E2TB_ignoreModels") then { SCAR_E2TB_ignoreModels = []; };
@@ -57,7 +58,7 @@ private _barTextMsg = switch (_isAbsolute) do {
     _bar progressSetPosition (_i / _tot);
 
     // get line
-    private _line = [_x, _isAbsolute] call SCAR_E2TB_fnc_getModelLine;
+    private _line = [_x, _isAbsolute, _edenEnh] call SCAR_E2TB_fnc_getModelLine;
     if !(_line isEqualTo objNull) then {
         _lines pushBack _line;
     };
